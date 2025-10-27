@@ -1,0 +1,36 @@
+---
+import { getContentSection } from '../lib/cms'
+
+const content = await getContentSection('story')
+---
+
+<section id={content.id} class="bg-gradient-to-br from-cacao to-cacao-light py-16 md:py-24 lg:py-32 px-4 md:px-6 lg:px-8 relative overflow-hidden">
+  <!-- Decorative wave -->
+  <div class="absolute top-0 left-0 right-0 h-full opacity-10">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="w-full">
+      <path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,133.3C672,139,768,181,864,181.3C960,181,1056,139,1152,128C1248,117,1344,139,1392,149.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+    </svg>
+  </div>
+
+  <div class="max-w-6xl mx-auto relative z-10">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white text-center mb-8 md:mb-12">{content.title}</h2>
+    
+    <div class="bg-white/95 p-6 md:p-12 lg:p-16 rounded-2xl md:rounded-3xl shadow-2xl">
+      <p class="text-base md:text-lg lg:text-xl leading-relaxed md:leading-loose text-gray-800 mb-6 md:mb-8 font-normal">
+        {content.paragraphs[0]}
+      </p>
+      
+      <p class="text-base md:text-lg lg:text-xl leading-relaxed md:leading-loose text-gray-800 mb-6 md:mb-8 font-normal">
+        {content.paragraphs[1]}
+      </p>
+      
+      <blockquote class="text-lg md:text-xl lg:text-2xl italic text-forest font-semibold border-l-4 border-forest pl-4 md:pl-6 lg:pl-8 my-8 md:my-12">
+        "{content.quote}"
+      </blockquote>
+      
+      <p class="text-base md:text-lg lg:text-xl leading-relaxed md:leading-loose text-gray-800 font-normal">
+        {content.paragraphs[2]}
+      </p>
+    </div>
+  </div>
+</section>

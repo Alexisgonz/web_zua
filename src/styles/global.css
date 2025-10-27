@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design Tokens - Colores personalizados de SUA */
+:root {
+  --forest: #1a4d2e;
+  --forest-light: #2d5f3f;
+  --forest-dark: #0f3a23;
+  --cacao: #c9a775;
+  --cacao-light: #d4b896;
+  --cacao-dark: #b8956a;
+  --ink: #0c0c0c;
+}
+
+/* Clase de ancho personalizada para header */
+.max-w-8xl {
+  max-width: 90rem; /* 1440px */
+}
+
+/* Design System - Utility Classes */
+.bg-forest {
+  background-color: var(--forest);
+}
+
+.bg-forest-light {
+  background-color: var(--forest-light);
+}
+
+.bg-forest-dark {
+  background-color: var(--forest-dark);
+}
+
+.bg-cacao {
+  background-color: var(--cacao);
+}
+
+.bg-cacao-light {
+  background-color: var(--cacao-light);
+}
+
+.bg-cacao-dark {
+  background-color: var(--cacao-dark);
+}
+
+.text-forest {
+  color: var(--forest);
+}
+
+.text-forest-light {
+  color: var(--forest-light);
+}
+
+.text-forest-dark {
+  color: var(--forest-dark);
+}
+
+.text-cacao {
+  color: var(--cacao);
+}
+
+.text-cacao-light {
+  color: var(--cacao-light);
+}
+
+.text-cacao-dark {
+  color: var(--cacao-dark);
+}
+
+.text-ink {
+  color: var(--ink);
+}
+
+.border-forest {
+  border-color: var(--forest);
+}
+
+.border-forest-light {
+  border-color: var(--forest-light);
+}
+
+/* Gradients */
+.from-forest {
+  --tw-gradient-from: var(--forest);
+  --tw-gradient-to: rgb(26 77 46 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-forest-light {
+  --tw-gradient-to: var(--forest-light);
+}
+
+.to-forest-dark {
+  --tw-gradient-to: var(--forest-dark);
+}
+
+.from-cacao {
+  --tw-gradient-from: var(--cacao);
+  --tw-gradient-to: rgb(201 167 117 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-cacao-light {
+  --tw-gradient-to: var(--cacao-light);
+}
+
+.to-cacao-dark {
+  --tw-gradient-to: var(--cacao-dark);
+}
+
+/* Professional Shadows */
+.shadow-soft {
+  box-shadow: 0 20px 60px -20px rgba(0,0,0,.18);
+}
+
+.shadow-card {
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,.15);
+}
+
+.shadow-card-hover {
+  box-shadow: 0 20px 50px -15px rgba(0,0,0,.25);
+}
+
+.shadow-inset {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+}
+
+/* Animations */
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out both;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out both;
+}
+
+/* Professional Focus States */
+@layer base {
+  * {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2;
+  }
+}
+
+/* Smooth scrolling */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}

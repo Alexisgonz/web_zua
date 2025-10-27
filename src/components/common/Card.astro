@@ -1,0 +1,33 @@
+---
+interface Props {
+  icon?: string;
+  title: string;
+  description: string;
+  variant?: 'default' | 'hover-lift';
+  className?: string;
+}
+
+const { 
+  icon, 
+  title, 
+  description, 
+  variant = 'default',
+  className = '' 
+} = Astro.props;
+
+const cardClasses = [
+  'bg-white p-6 md:p-8 lg:p-10 rounded-2xl md:rounded-3xl shadow-card transition-all duration-300',
+  variant === 'hover-lift' && 'hover:-translate-y-2 md:hover:-translate-y-3 hover:shadow-card-hover border-2 border-transparent hover:border-forest',
+  className
+].filter(Boolean).join(' ');
+---
+
+<div class={cardClasses}>
+  {icon && (
+    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-forest to-forest-light rounded-full flex items-center justify-center text-2xl md:text-4xl mb-4 md:mb-6">
+      {icon}
+    </div>
+  )}
+  <h3 class="text-xl md:text-2xl font-bold text-forest mb-3 md:mb-4">{title}</h3>
+  <p class="text-gray-600 leading-relaxed text-sm md:text-base">{description}</p>
+</div>

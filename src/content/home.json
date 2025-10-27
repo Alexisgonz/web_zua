@@ -1,0 +1,139 @@
+{
+  "hero": {
+    "id": "inicio",
+    "title": "Del Bosque a tu Bienestar",
+    "subtitle": "Transformadores de Cacao con Propósito",
+    "description": "Somos una empresa innovadora que transforma el cacao del bosque colombiano en productos extraordinarios para la alimentación y el cuidado de la piel. Con trazabilidad de origen, calidad certificable y un compromiso inquebrantable con la sostenibilidad.",
+    "feature": {
+      "icon": "🌿",
+      "title": "100% Natural",
+      "description": "Productos no maderables del bosque, cultivados con respeto por la biodiversidad y las comunidades locales."
+    },
+    "images": [
+      {
+        "src": "/slider_home/image_3 (1).png",
+        "alt": "Productos de cacao SUA - Transformación artesanal"
+      },
+      {
+        "src": "/slider_home/image_3 (2).png", 
+        "alt": "Aceites naturales y productos cosmecéuticos"
+      },
+      {
+        "src": "/slider_home/image_3 (3).png",
+        "alt": "Granos de cacao premium del bosque colombiano"
+      }
+    ],
+    "slider": {
+      "intervalMs": 4000,
+      "aspect": "aspect-[4/3]"
+    }
+  },
+  "values": {
+    "section": {
+      "id": "nosotros",
+      "title": "Nuestro Toque Distintivo",
+      "subtitle": "Lo que nos hace únicos en el sector cacaotero",
+      "description": "Cuatro pilares fundamentales que definen nuestra propuesta de valor."
+    },
+    "values": [
+      {
+        "id": "beneficio-colectivo",
+        "icon": "🤝",
+        "title": "Beneficio Colectivo",
+        "description": "Trabajamos de la mano con comunidades locales para generar impacto positivo y crear oportunidades de desarrollo sostenible.",
+        "metric": {
+          "value": "150+",
+          "label": "Familias beneficiadas"
+        }
+      },
+      {
+        "id": "innovacion",
+        "icon": "💡",
+        "title": "Innovación",
+        "description": "Desarrollamos productos únicos aprovechando la riqueza del bosque a través de tecnología y conocimiento ancestral.",
+        "metric": {
+          "value": "25+",
+          "label": "Productos desarrollados"
+        }
+      },
+      {
+        "id": "seguridad",
+        "icon": "🛡️",
+        "title": "Seguridad e Inocuidad",
+        "description": "Operamos con los más altos estándares de calidad y seguridad alimentaria, garantizando productos seguros.",
+        "metric": {
+          "value": "100%",
+          "label": "Certificación de calidad"
+        }
+      },
+      {
+        "id": "alianzas",
+        "icon": "🌍",
+        "title": "Alianzas Estratégicas",
+        "description": "Colaboramos con organizaciones líderes en innovación y sostenibilidad para maximizar nuestro impacto.",
+        "metric": {
+          "value": "15+",
+          "label": "Socios estratégicos"
+        }
+      }
+    ],
+    "cta": {
+      "title": "¿Listo para transformar contigo?",
+      "description": "Únete a nuestra misión de crear un impacto positivo en el mundo a través del cacao sostenible.",
+      "button": {
+        "text": "Conoce Más",
+        "href": "#contacto"
+      }
+    }
+  },
+  "story": {
+    "id": "historia",
+    "title": "Contamos Historias, Inspiramos Confianza",
+    "paragraphs": [
+      "Cada grano de cacao que transformamos cuenta una historia de conservación, innovación y compromiso. Nos especializamos en el aprovechamiento responsable de productos no maderables del bosque, creando valor a través de dos líneas de negocio complementarias: alimentaria y cosmecéutica.",
+      "Nuestro portafolio incluye cacao en polvo, manteca, nibs y licor de cacao, mezclas innovadoras como cacaococo, miel de abejas, cúrcuma y aceites funcionales excepcionales como el aceite de cacay y copaiba. Cada producto está diseñado para impulsar la salud, el bienestar y la conservación de la biodiversidad.",
+      "Nuestra filosofía se sustenta en tres pilares fundamentales: trazabilidad de origen que garantiza transparencia total, calidad certificable que asegura excelencia en cada producto, y un enfoque de sostenibilidad que respeta y protege nuestros ecosistemas."
+    ],
+    "quote": "No solo vendemos productos, dejamos huella positiva en cada grano de cacao"
+  },
+  "products": {
+    "id": "productos",
+    "title": "Nuestras Líneas de Negocio",
+    "businessLines": [
+      {
+        "id": "alimentaria",
+        "icon": "🍫",
+        "title": "Línea Alimentaria",
+        "description": "Productos de cacao premium para nutrición y deleite culinario",
+        "products": [
+          "Cacao en polvo",
+          "Manteca de cacao", 
+          "Nibs de cacao",
+          "Licor de cacao",
+          "Mezcla cacaococo",
+          "Miel de abejas",
+          "Cúrcuma"
+        ],
+        "buttonText": "Explorar Productos",
+        "gradientFrom": "from-forest",
+        "gradientTo": "to-forest-light"
+      },
+      {
+        "id": "cosmetica",
+        "icon": "🌿",
+        "title": "Línea Cosmecéutica",
+        "description": "Aceites funcionales y productos para el cuidado natural de la piel",
+        "products": [
+          "Aceite de cacay",
+          "Aceite de copaiba",
+          "Productos de cuidado facial",
+          "Línea de cuidado corporal",
+          "Tratamientos especializados"
+        ],
+        "buttonText": "Explorar Productos",
+        "gradientFrom": "from-cacao",
+        "gradientTo": "to-cacao-light"
+      }
+    ]
+  }
+}
