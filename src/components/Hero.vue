@@ -1,11 +1,11 @@
 <template>
-  <section id="inicio" class="bg-gradient-to-br from-forest to-forest-light flex flex-col justify-center relative overflow-hidden min-h-screen">
+  <section id="inicio" class="bg-gradient-to-br from-forest to-forest-light flex flex-col justify-center relative overflow-hidden min-h-screen scroll-mt-24 md:scroll-mt-32">
     <!-- Decorative circles -->
     <div class="absolute top-[-50%] right-[-10%] w-[400px] md:w-[600px] lg:w-[800px] h-[400px] md:h-[600px] lg:h-[800px] bg-white/5 rounded-full"></div>
     <div class="absolute bottom-[-30%] left-[-5%] w-[300px] md:w-[450px] lg:w-[600px] h-[300px] md:h-[450px] lg:h-[600px] bg-black/10 rounded-full"></div>
     
     <!-- Content Container -->
-    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pt-8 md:pt-12 pb-8 md:pb-10 w-full relative z-10">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pt-28 md:pt-36 lg:pt-44 pb-8 md:pb-10 w-full relative z-10">
       <!-- Text Content -->
       <div class="text-center text-white mb-6 md:mb-8 max-w-4xl mx-auto">
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3 md:mb-4">

@@ -20,123 +20,150 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="font-nunito text-gray-800">
-    <header class="fixed top-0 inset-x-0 z-50">
+    <!-- Header con efecto Orizon -->
+    <header class="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 lg:px-8 pt-4 md:pt-6 pb-0">
       <div
-        id="bar"
-        class="w-full bg-white/90 backdrop-blur-md transition-all duration-300"
+        id="header-bar"
+        class="max-w-7xl mx-auto bg-white/95 backdrop-blur-lg rounded-2xl shadow-lg transition-all duration-500 ease-out"
       >
-        <nav
-          id="nav"
-          class="max-w-7xl mx-auto h-16 md:h-20 lg:h-24 px-4 md:px-6 lg:px-0
-         flex items-center justify-between transition-all duration-300"
-        >
-          <a href="/" class="h-full flex items-center shrink-0">
+        <nav class="px-4 md:px-6 lg:px-8 h-16 md:h-18 flex items-center justify-between">
+          <!-- Logo -->
+          <a href="/" class="flex items-center shrink-0 group">
             <img
-              id="logo"
               src="/Logo_sua.png"
               alt="SUA"
-              class="block w-auto h-12 md:h-16 lg:h-18 xl:h-20"
+              class="w-auto h-10 md:h-12 lg:h-14 transition-transform duration-300 group-hover:scale-105"
               loading="eager"
               decoding="async"
             />
           </a>
 
-          <!-- Mobile menu button -->
-          <button 
-            id="mobile-menu-button"
-            class="md:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1"
-            aria-label="Abrir menú"
-          >
-            <span class="w-6 h-0.5 bg-gray-800 transition-all duration-300"></span>
-            <span class="w-6 h-0.5 bg-gray-800 transition-all duration-300"></span>
-            <span class="w-6 h-0.5 bg-gray-800 transition-all duration-300"></span>
-          </button>
-
           <!-- Desktop Navigation -->
-          <ul class="hidden md:flex gap-6 lg:gap-8">
+          <ul class="hidden md:flex items-center gap-8 lg:gap-10">
             <li>
               <a
                 href="#inicio"
-                class="font-semibold text-sm lg:text-base text-gray-800 hover:text-forest transition-colors"
-                >Inicio</a>
+                class="relative font-semibold text-sm lg:text-base text-gray-700 hover:text-forest transition-colors duration-300 after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-forest after:transition-all after:duration-300 hover:after:w-full"
+              >
+                Inicio
+              </a>
             </li>
             <li>
               <a
-                href="#chocizone"
-                class="font-semibold text-sm lg:text-base text-gray-800 hover:text-forest transition-colors"
-                >Chocizone</a>
+                href="#nosotros"
+                class="relative font-semibold text-sm lg:text-base text-gray-700 hover:text-forest transition-colors duration-300 after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-forest after:transition-all after:duration-300 hover:after:w-full"
+              >
+                Nosotros
+              </a>
             </li>
             <li>
               <a
-                href="#fihizo"
-                class="font-semibold text-sm lg:text-base text-gray-800 hover:text-forest transition-colors"
-                >Fihizo</a>
+                href="#productos"
+                class="relative font-semibold text-sm lg:text-base text-gray-700 hover:text-forest transition-colors duration-300 after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-forest after:transition-all after:duration-300 hover:after:w-full"
+              >
+                Productos
+              </a>
             </li>
-            <!-- <li>
+            <li>
               <a
                 href="#sostenibilidad"
-                class="font-semibold text-sm lg:text-base text-gray-800 hover:text-forest transition-colors"
-                >Sostenibilidad</a>
-            </li> -->
-            <!-- <li>
+                class="relative font-semibold text-sm lg:text-base text-gray-700 hover:text-forest transition-colors duration-300 after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-forest after:transition-all after:duration-300 hover:after:w-full"
+              >
+                Sostenibilidad
+              </a>
+            </li>
+            <li>
               <a
                 href="#contacto"
-                class="font-semibold text-sm lg:text-base text-gray-800 hover:text-forest transition-colors"
-                >Contacto</a>
-            </li> -->
+                class="ml-4 bg-forest text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-forest-light hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+              >
+                Contacto
+              </a>
+            </li>
           </ul>
 
-          <!-- Mobile Navigation Menu -->
-          <div 
-            id="mobile-menu" 
-            class="md:hidden fixed inset-0 top-16 bg-white/95 backdrop-blur-md transform translate-x-full transition-transform duration-300 ease-in-out"
+          <!-- Mobile Menu Button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden relative w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors"
+            aria-label="Abrir menú"
           >
-            <ul class="flex flex-col items-center justify-center h-full space-y-8">
-              <li>
-                <a
-                  href="#inicio"
-                  class="mobile-nav-link font-semibold text-xl text-gray-800 hover:text-forest transition-colors"
-                  >Inicio</a>
-              </li>
-              <li>
-                <a
-                  href="#nosotros"
-                  class="mobile-nav-link font-semibold text-xl text-gray-800 hover:text-forest transition-colors"
-                  >Nosotros</a>
-              </li>
-              <li>
-                <a
-                  href="#productos"
-                  class="mobile-nav-link font-semibold text-xl text-gray-800 hover:text-forest transition-colors"
-                  >Productos</a>
-              </li>
-              <li>
-                <a
-                  href="#sostenibilidad"
-                  class="mobile-nav-link font-semibold text-xl text-gray-800 hover:text-forest transition-colors"
-                  >Sostenibilidad</a>
-              </li>
-              <li>
-                <a
-                  href="#contacto"
-                  class="mobile-nav-link font-semibold text-xl text-gray-800 hover:text-forest transition-colors"
-                  >Contacto</a>
-              </li>
-            </ul>
-          </div>
+            <div class="w-5 h-4 flex flex-col justify-between">
+              <span class="w-full h-0.5 bg-gray-800 rounded-full transition-all duration-300 origin-center"></span>
+              <span class="w-full h-0.5 bg-gray-800 rounded-full transition-all duration-300"></span>
+              <span class="w-full h-0.5 bg-gray-800 rounded-full transition-all duration-300 origin-center"></span>
+            </div>
+          </button>
+        </nav>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div
+        id="mobile-menu-overlay"
+        class="md:hidden fixed inset-0 bg-black/0 backdrop-blur-0 opacity-0 pointer-events-none transition-all duration-300 z-40"
+      ></div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden fixed top-24 left-4 right-4 bg-white rounded-2xl shadow-2xl overflow-hidden transform scale-95 opacity-0 pointer-events-none transition-all duration-300 z-50"
+      >
+        <nav class="p-6">
+          <ul class="space-y-1">
+            <li>
+              <a
+                href="#inicio"
+                class="mobile-nav-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-forest hover:bg-gray-50 rounded-lg transition-all"
+              >
+                Inicio
+              </a>
+            </li>
+            <li>
+              <a
+                href="#nosotros"
+                class="mobile-nav-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-forest hover:bg-gray-50 rounded-lg transition-all"
+              >
+                Nosotros
+              </a>
+            </li>
+            <li>
+              <a
+                href="#productos"
+                class="mobile-nav-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-forest hover:bg-gray-50 rounded-lg transition-all"
+              >
+                Productos
+              </a>
+            </li>
+            <li>
+              <a
+                href="#sostenibilidad"
+                class="mobile-nav-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-forest hover:bg-gray-50 rounded-lg transition-all"
+              >
+                Sostenibilidad
+              </a>
+            </li>
+            <li class="pt-2">
+              <a
+                href="#contacto"
+                class="mobile-nav-link block px-4 py-3 text-base font-bold text-white bg-forest hover:bg-forest-light rounded-lg text-center transition-all"
+              >
+                Contacto
+              </a>
+            </li>
+          </ul>
         </nav>
       </div>
     </header>
 
-    <main class="mt-16 md:mt-20 lg:mt-24">
+    <main>
       <slot />
     </main>
 
     <footer class="bg-forest text-white px-4 md:px-8 py-12 md:py-16">
       <div
-        class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-8"
+        class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-8"
       >
-        <div class="col-span-1 sm:col-span-2 md:col-span-1">
+        <div class="col-span-1 sm:col-span-2 lg:col-span-1">
           <h4 class="text-xl md:text-2xl font-extrabold mb-4 md:mb-6">SUA</h4>
           <p class="text-white/80 leading-relaxed text-sm md:text-base">
             Transformadores de cacao con propósito. Del bosque colombiano al
@@ -145,31 +172,31 @@ const { title } = Astro.props;
         </div>
         <div>
           <h4 class="text-lg md:text-xl font-extrabold mb-4 md:mb-6">Empresa</h4>
-          <a href="#nosotros" class="block text-white/80 hover:text-white mb-2 text-sm md:text-base"
-            >Sobre Nosotros</a
-          >
-          <a href="#productos" class="block text-white/80 hover:text-white mb-2 text-sm md:text-base"
-            >Productos</a
-          >
-          <a href="#" class="block text-white/80 hover:text-white mb-2 text-sm md:text-base"
-            >Sostenibilidad</a
-          >
-          <a href="#" class="block text-white/80 hover:text-white mb-2 text-sm md:text-base">Blog</a>
+          <a href="#nosotros" class="block text-white/80 hover:text-white mb-2 text-sm md:text-base transition-colors">
+            Sobre Nosotros
+          </a>
+          <a href="#productos" class="block text-white/80 hover:text-white mb-2 text-sm md:text-base transition-colors">
+            Productos
+          </a>
+          <a href="#" class="block text-white/80 hover:text-white mb-2 text-sm md:text-base transition-colors">
+            Sostenibilidad
+          </a>
+          <a href="#" class="block text-white/80 hover:text-white mb-2 text-sm md:text-base transition-colors">Blog</a>
         </div>
         <div>
           <h4 class="text-lg md:text-xl font-extrabold mb-4 md:mb-6">Soporte</h4>
-          <a href="#" class="block text-white/80 hover:text-white mb-2 text-sm md:text-base"
-            >Contacto</a
-          >
-          <a href="#" class="block text-white/80 hover:text-white mb-2 text-sm md:text-base"
-            >Preguntas Frecuentes</a
-          >
-          <a href="#" class="block text-white/80 hover:text-white mb-2 text-sm md:text-base"
-            >Certificaciones</a
-          >
-          <a href="#" class="block text-white/80 hover:text-white mb-2 text-sm md:text-base"
-            >Distribuidores</a
-          >
+          <a href="#" class="block text-white/80 hover:text-white mb-2 text-sm md:text-base transition-colors">
+            Contacto
+          </a>
+          <a href="#" class="block text-white/80 hover:text-white mb-2 text-sm md:text-base transition-colors">
+            Preguntas Frecuentes
+          </a>
+          <a href="#" class="block text-white/80 hover:text-white mb-2 text-sm md:text-base transition-colors">
+            Certificaciones
+          </a>
+          <a href="#" class="block text-white/80 hover:text-white mb-2 text-sm md:text-base transition-colors">
+            Distribuidores
+          </a>
         </div>
         <div>
           <h4 class="text-lg md:text-xl font-extrabold mb-4 md:mb-6">Contacto</h4>
@@ -188,27 +215,56 @@ const { title } = Astro.props;
 </html>
 
 <script is:inline>
-  const bar = document.getElementById("bar");
+  const headerBar = document.getElementById("header-bar");
   const mobileMenuButton = document.getElementById("mobile-menu-button");
   const mobileMenu = document.getElementById("mobile-menu");
+  const mobileMenuOverlay = document.getElementById("mobile-menu-overlay");
   const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
 
   let isMenuOpen = false;
+  let lastScrollY = window.scrollY;
 
+  // Toggle Mobile Menu
   function toggleMobileMenu() {
     isMenuOpen = !isMenuOpen;
     
     if (isMenuOpen) {
-      mobileMenu.style.transform = "translateX(0)";
-      mobileMenuButton.children[0].style.transform = "rotate(45deg) translate(5px, 5px)";
-      mobileMenuButton.children[1].style.opacity = "0";
-      mobileMenuButton.children[2].style.transform = "rotate(-45deg) translate(7px, -6px)";
+      // Open menu
+      mobileMenu.classList.remove("pointer-events-none", "opacity-0", "scale-95");
+      mobileMenu.classList.add("opacity-100", "scale-100");
+      
+      mobileMenuOverlay.classList.remove("pointer-events-none", "opacity-0", "backdrop-blur-0", "bg-black/0");
+      mobileMenuOverlay.classList.add("opacity-100", "backdrop-blur-sm", "bg-black/20");
+      
+      // Animate hamburger to X
+      const spans = mobileMenuButton.querySelectorAll("span");
+      spans[0].style.transform = "rotate(45deg) translateY(7px)";
+      spans[1].style.opacity = "0";
+      spans[2].style.transform = "rotate(-45deg) translateY(-7px)";
+      
       document.body.style.overflow = "hidden";
     } else {
-      mobileMenu.style.transform = "translateX(100%)";
-      mobileMenuButton.children[0].style.transform = "rotate(0) translate(0, 0)";
-      mobileMenuButton.children[1].style.opacity = "1";
-      mobileMenuButton.children[2].style.transform = "rotate(0) translate(0, 0)";
+      // Close menu
+      mobileMenu.classList.add("opacity-0", "scale-95");
+      mobileMenu.classList.remove("opacity-100", "scale-100");
+      
+      setTimeout(() => {
+        mobileMenu.classList.add("pointer-events-none");
+      }, 300);
+      
+      mobileMenuOverlay.classList.add("opacity-0", "backdrop-blur-0", "bg-black/0");
+      mobileMenuOverlay.classList.remove("opacity-100", "backdrop-blur-sm", "bg-black/20");
+      
+      setTimeout(() => {
+        mobileMenuOverlay.classList.add("pointer-events-none");
+      }, 300);
+      
+      // Reset hamburger
+      const spans = mobileMenuButton.querySelectorAll("span");
+      spans[0].style.transform = "";
+      spans[1].style.opacity = "";
+      spans[2].style.transform = "";
+      
       document.body.style.overflow = "";
     }
   }
@@ -219,41 +275,82 @@ const { title } = Astro.props;
     }
   }
 
-  function update() {
-    const scrolled = window.scrollY > 10;
-
-    if (scrolled) {
-      // Comportamiento como Compensave: header más estrecho y centrado con scroll
-      bar.style.maxWidth = "78%";
-      bar.style.margin = "0 auto";
-      bar.classList.add("rounded-b-2xl");
+  // Header scroll effect - Estilo Orizon
+  function updateHeader() {
+    const scrollY = window.scrollY;
+    
+    if (scrollY > 20) {
+      // Scrolled: más compacto y sombra más pronunciada
+      headerBar.style.padding = "0.5rem 1rem";
+      headerBar.classList.add("shadow-xl");
+      headerBar.classList.remove("shadow-lg");
     } else {
-      bar.style.maxWidth = "";
-      bar.style.margin = "";
-      bar.classList.remove("rounded-b-2xl");
+      // Top: más espacioso
+      headerBar.style.padding = "";
+      headerBar.classList.remove("shadow-xl");
+      headerBar.classList.add("shadow-lg");
     }
+    
+    lastScrollY = scrollY;
   }
 
-  // Event listeners
+  // Event Listeners
   mobileMenuButton.addEventListener("click", toggleMobileMenu);
+  mobileMenuOverlay.addEventListener("click", closeMobileMenu);
   
-  // Close menu when clicking on nav links
   mobileNavLinks.forEach(link => {
     link.addEventListener("click", closeMobileMenu);
   });
 
-  // Close menu when clicking outside
-  mobileMenu.addEventListener("click", (e) => {
-    if (e.target === mobileMenu) {
-      closeMobileMenu();
-    }
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+      if (href !== "#" && href !== "") {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          const headerHeight = 100; // Adjust for fixed header
+          const targetPosition = target.offsetTop - headerHeight;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth"
+          });
+        }
+      }
+    });
   });
 
-  update();
-  window.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update);
+  // Initialize
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
+  window.addEventListener("resize", updateHeader);
 </script>
 
 <style is:global>
   @import "../styles/global.css";
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #1a4d2e;
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2d5f3f;
+  }
 </style>
