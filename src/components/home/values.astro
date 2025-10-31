@@ -1,0 +1,72 @@
+---
+interface ValueMetric {
+  value: string;
+  label: string;
+}
+
+interface ValueItem {
+  id: string;
+  icon: string;
+  title: string;
+  description: string;
+  metric: ValueMetric;
+}
+
+interface Section {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+}
+
+interface ValuesData {
+  section: Section;
+  values: ValueItem[];
+}
+
+interface Props {
+  data: ValuesData;
+}
+
+const { data } = Astro.props as Props;
+---
+
+<section id={data.section.id} class="py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6">
+        {data.section.title}
+      </h2>
+      <p class="text-lg md:text-xl text-gray-600 mb-4">
+        {data.section.subtitle}
+      </p>
+      <p class="text-base md:text-lg text-gray-500 max-w-4xl mx-auto leading-relaxed">
+        {data.section.description}
+      </p>
+    </div>
+    
+    <!-- Values Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {data.values.map((value: ValueItem) => (
+        <div class="bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-2 border-transparent hover:border-green-500 group">
+          <!-- Icon -->
+          <div class="w-20 h-20 bg-gradient-to-br from-green-600 to-green-800 rounded-full flex items-center justify-center text-4xl mb-6 shadow-lg group-hover:scale-105 transition-transform duration-300">
+            {value.icon}
+          </div>
+          
+          <!-- Content -->
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">{value.title}</h3>
+          <p class="text-gray-600 leading-relaxed mb-6">{value.description}</p>
+          
+          <!-- Metric -->
+          <div class="pt-4 border-t border-gray-100">
+            <div class="text-center">
+              <span class="text-2xl font-bold text-green-600">{value.metric.value}</span>
+              <p class="text-sm text-gray-500">{value.metric.label}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

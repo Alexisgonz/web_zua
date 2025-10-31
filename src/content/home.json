@@ -1,39 +1,57 @@
 {
   "hero": {
     "id": "inicio",
-    "title": "Del Bosque a tu Bienestar",
-    "subtitle": "Transformadores de Cacao con Propósito",
-    "description": "Somos una empresa innovadora que transforma el cacao del bosque colombiano en productos extraordinarios para la alimentación y el cuidado de la piel. Con trazabilidad de origen, calidad certificable y un compromiso inquebrantable con la sostenibilidad.",
+    "title": "✨ Glow Up Natural ✨",
+    "subtitle": "Cacao amazónico para tu rutina de belleza 💕",
+    "description": "¡Descubre el secreto mejor guardado del Amazonas! Productos naturales que harán brillar tu piel y endulzar tu vida. Porque mereces lo mejor de la naturaleza 🌿✨",
     "feature": {
-      "icon": "🌿",
-      "title": "100% Natural",
-      "description": "Productos no maderables del bosque, cultivados con respeto por la biodiversidad y las comunidades locales."
+      "icon": "💖",
+      "title": "Skincare Natural",
+      "description": "Ingredientes 100% puros del bosque amazónico. Tu piel radiante, naturalmente ✨"
     },
     "images": [
       {
         "src": "/slider_home/image_3 (1).png",
-        "alt": "Productos de cacao SUA - Transformación artesanal"
+        "alt": "Productos de cacao SUA - Transformación artesanal",
+        "title": "Cacao Glow 🍫✨",
+        "description": "El ingrediente secreto para una piel radiante"
       },
       {
         "src": "/slider_home/image_3 (2).png", 
-        "alt": "Aceites naturales y productos cosmecéuticos"
+        "alt": "Aceites naturales y productos cosmecéuticos",
+        "title": "Self Care Vibes 🌸",
+        "description": "Aceites amazónicos para tu rutina de belleza"
       },
       {
         "src": "/slider_home/image_3 (3).png",
-        "alt": "Granos de cacao premium del bosque colombiano"
+        "alt": "Granos de cacao premium del bosque colombiano",
+        "title": "Pure & Clean 💎",
+        "description": "Calidad premium que tu piel va a amar"
       }
     ],
     "slider": {
       "intervalMs": 4000,
       "aspect": "aspect-[4/3]"
-    }
+    },
+    "ctas": [
+      {
+        "text": "Shop Now 🛍️✨",
+        "href": "#productos",
+        "variant": "primary"
+      },
+      {
+        "text": "Conoce Más �",
+        "href": "#nosotros",
+        "variant": "secondary"
+      }
+    ]
   },
   "values": {
     "section": {
       "id": "nosotros",
       "title": "Nuestro Toque Distintivo",
       "subtitle": "Lo que nos hace únicos en el sector cacaotero",
-      "description": "Cuatro pilares fundamentales que definen nuestra propuesta de valor."
+      "description": "Cuatro pilares fundamentales que definen nuestra propuesta de valor y compromiso con la sostenibilidad."
     },
     "values": [
       {
@@ -76,63 +94,212 @@
           "label": "Socios estratégicos"
         }
       }
-    ],
-    "cta": {
-      "title": "¿Listo para transformar contigo?",
-      "description": "Únete a nuestra misión de crear un impacto positivo en el mundo a través del cacao sostenible.",
-      "button": {
-        "text": "Conoce Más",
-        "href": "#contacto"
-      }
-    }
+    ]
   },
-  "story": {
-    "id": "historia",
-    "title": "Contamos Historias, Inspiramos Confianza",
-    "paragraphs": [
-      "Cada grano de cacao que transformamos cuenta una historia de conservación, innovación y compromiso. Nos especializamos en el aprovechamiento responsable de productos no maderables del bosque, creando valor a través de dos líneas de negocio complementarias: alimentaria y cosmecéutica.",
-      "Nuestro portafolio incluye cacao en polvo, manteca, nibs y licor de cacao, mezclas innovadoras como cacaococo, miel de abejas, cúrcuma y aceites funcionales excepcionales como el aceite de cacay y copaiba. Cada producto está diseñado para impulsar la salud, el bienestar y la conservación de la biodiversidad.",
-      "Nuestra filosofía se sustenta en tres pilares fundamentales: trazabilidad de origen que garantiza transparencia total, calidad certificable que asegura excelencia en cada producto, y un enfoque de sostenibilidad que respeta y protege nuestros ecosistemas."
-    ],
-    "quote": "No solo vendemos productos, dejamos huella positiva en cada grano de cacao"
-  },
-  "products": {
-    "id": "productos",
-    "title": "Nuestras Líneas de Negocio",
-    "businessLines": [
+  "features": {
+    "section": {
+      "id": "proceso",
+      "label": "NUESTRO PROCESO",
+      "title": "Del Bosque a tu Mesa",
+      "titleHighlight": "Naturalmente perfecto.",
+      "description": "Cada producto pasa por un proceso cuidadoso que garantiza la máxima calidad, desde la cosecha sostenible hasta tu hogar."
+    },
+    "items": [
       {
-        "id": "alimentaria",
-        "icon": "🍫",
-        "title": "Línea Alimentaria",
-        "description": "Productos de cacao premium para nutrición y deleite culinario",
-        "products": [
-          "Cacao en polvo",
-          "Manteca de cacao", 
-          "Nibs de cacao",
-          "Licor de cacao",
-          "Mezcla cacaococo",
-          "Miel de abejas",
-          "Cúrcuma"
-        ],
-        "buttonText": "Explorar Productos",
-        "gradientFrom": "from-forest",
-        "gradientTo": "to-forest-light"
+        "id": "cosecha",
+        "icon": "sliders",
+        "title": "Cosecha Consciente",
+        "description": "Trabajamos directamente con comunidades locales para una cosecha sostenible que respeta los ciclos naturales del bosque.",
+        "color": "rose"
       },
       {
-        "id": "cosmetica",
-        "icon": "🌿",
-        "title": "Línea Cosmecéutica",
-        "description": "Aceites funcionales y productos para el cuidado natural de la piel",
+        "id": "calidad",
+        "icon": "shield",
+        "title": "Control de Calidad",
+        "description": "Certificaciones internacionales y pruebas rigurosas garantizan que cada producto cumple con los más altos estándares de pureza.",
+        "color": "emerald"
+      },
+      {
+        "id": "transformacion",
+        "icon": "zap",
+        "title": "Transformación Natural",
+        "description": "Procesos artesanales que preservan las propiedades naturales del cacao y otros ingredientes del bosque colombiano.",
+        "color": "amber"
+      }
+    ],
+    "badges": [
+      {
+        "icon": "🌱",
+        "text": "100% Orgánico"
+      },
+      {
+        "icon": "♻️",
+        "text": "Empaques Eco-friendly"
+      },
+      {
+        "icon": "✨",
+        "text": "Libres de Crueldad"
+      },
+      {
+        "icon": "🇨🇴",
+        "text": "Hecho en Colombia"
+      }
+    ]
+  },
+  "benefits": {
+    "section": {
+      "id": "beneficios",
+      "label": "BENEFICIOS",
+      "title": "Los beneficios de elegir",
+      "titleHighlight": "productos naturales",
+      "theme": "dark"
+    },
+    "items": [
+      {
+        "icon": "check",
+        "title": "Ingredientes Puros y Trazables",
+        "description": "Cada ingrediente tiene un origen verificable desde su cosecha hasta el producto final.",
+        "color": "rose"
+      },
+      {
+        "icon": "zap",
+        "title": "Resultados Visibles y Naturales",
+        "description": "Nutre tu piel y cuerpo con los antioxidantes y nutrientes del cacao amazónico.",
+        "color": "emerald"
+      },
+      {
+        "icon": "users",
+        "title": "Impacto Social Positivo",
+        "description": "Tu compra apoya directamente a más de 50 familias cacaoteras en Colombia.",
+        "color": "amber"
+      }
+    ],
+    "decorativeIcons": [
+      { "emoji": "🍫", "position": "top" },
+      { "emoji": "✨", "position": "bottom" },
+      { "emoji": "🌺", "position": "left" },
+      { "emoji": "💫", "position": "right" }
+    ]
+  },
+  "brands": {
+    "section": {
+      "id": "marcas",
+      "label": "NUESTRAS MARCAS",
+      "title": "Belleza y Sabor",
+      "titleHighlight": "del Bosque Colombiano"
+    },
+    "items": [
+      {
+        "id": "chocizone",
+        "name": "Chocizone",
+        "icon": "🍫",
+        "category": "Línea Alimentaria",
+        "description": "Productos de cacao premium que transforman tu cocina. Desde cacao en polvo orgánico hasta manteca de cacao, nibs crujientes y licor de cacao puro del Amazonas.",
         "products": [
-          "Aceite de cacay",
-          "Aceite de copaiba",
-          "Productos de cuidado facial",
-          "Línea de cuidado corporal",
-          "Tratamientos especializados"
+          "Cacao en Polvo",
+          "Manteca",
+          "Nibs",
+          "Licor"
         ],
-        "buttonText": "Explorar Productos",
-        "gradientFrom": "from-cacao",
-        "gradientTo": "to-cacao-light"
+        "cta": {
+          "text": "Explorar Chocizone",
+          "href": "#chocizone"
+        },
+        "colors": {
+          "from": "amber-50",
+          "to": "orange-50",
+          "gradient": "amber-500",
+          "gradientTo": "orange-500",
+          "accent": "amber-200"
+        }
+      },
+      {
+        "id": "fihizu",
+        "name": "Fihizu",
+        "icon": "🌸",
+        "category": "Línea Cosmecéutica",
+        "description": "Belleza natural con aceites funcionales del Amazonas. Aceite de cacay, copaiba y productos de cuidado facial que revelan tu belleza más radiante.",
+        "products": [
+          "Aceite Cacay",
+          "Copaiba",
+          "Facial",
+          "Corporal"
+        ],
+        "cta": {
+          "text": "Explorar Fihizu",
+          "href": "#fihizu"
+        },
+        "colors": {
+          "from": "rose-50",
+          "to": "pink-50",
+          "gradient": "rose-500",
+          "gradientTo": "pink-500",
+          "accent": "rose-200"
+        }
+      }
+    ]
+  },
+  "testimonials": {
+    "section": {
+      "id": "testimonios",
+      "label": "TESTIMONIOS",
+      "title": "Lo que nuestras clientas",
+      "titleHighlight": "dicen sobre SUA"
+    },
+    "items": [
+      {
+        "id": 1,
+        "rating": 5,
+        "text": "El aceite de cacay de Fihizu transformó mi piel completamente. Es increíble saber que es 100% natural y apoya a comunidades colombianas. ¡Lo recomiendo totalmente!",
+        "author": {
+          "name": "María Camila",
+          "initials": "MC",
+          "location": "Bogotá, Colombia",
+          "color": "rose"
+        }
+      },
+      {
+        "id": 2,
+        "rating": 5,
+        "text": "Chocizone es mi marca favorita de cacao. El sabor es incomparable y saber que es orgánico y sostenible hace que cada taza sea aún más especial.",
+        "author": {
+          "name": "Laura Gómez",
+          "initials": "LG",
+          "location": "Medellín, Colombia",
+          "color": "amber"
+        }
+      },
+      {
+        "id": 3,
+        "rating": 5,
+        "text": "Me encanta que SUA sea una empresa consciente. Los productos son de alta calidad y el compromiso con el medio ambiente es real. Definitivamente una marca para apoyar.",
+        "author": {
+          "name": "Ana Rodríguez",
+          "initials": "AR",
+          "location": "Cali, Colombia",
+          "color": "emerald"
+        }
+      }
+    ]
+  },
+  "cta": {
+    "section": {
+      "id": "cta-final",
+      "title": "¿Lista para experimentar",
+      "titleBreak": "la belleza natural?",
+      "description": "Únete a miles de mujeres que ya disfrutan de productos puros, sostenibles y efectivos.",
+      "theme": "gradient"
+    },
+    "buttons": [
+      {
+        "text": "Explorar Productos",
+        "href": "#productos",
+        "variant": "white"
+      },
+      {
+        "text": "Contactar",
+        "href": "#contacto",
+        "variant": "outline"
       }
     ]
   }

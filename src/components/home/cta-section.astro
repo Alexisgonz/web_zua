@@ -1,0 +1,53 @@
+---
+interface Button {
+  text: string;
+  href: string;
+  variant: string;
+}
+
+interface Section {
+  id: string;
+  title: string;
+  titleBreak: string;
+  description: string;
+  theme: string;
+}
+
+interface CTAData {
+  section: Section;
+  buttons: Button[];
+}
+
+interface Props {
+  data: CTAData;
+}
+
+const { data } = Astro.props as Props;
+const { section, buttons } = data;
+---
+
+<section class="py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-rose-500 via-pink-500 to-emerald-500 text-white relative overflow-hidden">
+  <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-30"></div>
+  
+  <div class="max-w-4xl mx-auto text-center relative z-10">
+    <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
+      {section.title}<br/>{section.titleBreak}
+    </h2>
+    <p class="text-xl md:text-2xl mb-10 text-white/90">
+      {section.description}
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      {buttons.map((button: Button) => (
+        <a 
+          href={button.href}
+          class={button.variant === 'white' 
+            ? 'bg-white text-rose-600 px-10 py-5 rounded-full font-bold text-lg hover:bg-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all'
+            : 'bg-white/10 backdrop-blur-sm text-white border-2 border-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/20 hover:shadow-2xl hover:-translate-y-1 transition-all'
+          }
+        >
+          {button.text}
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

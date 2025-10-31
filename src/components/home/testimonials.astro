@@ -1,0 +1,77 @@
+---
+interface Author {
+  name: string;
+  initials: string;
+  location: string;
+  color: string;
+}
+
+interface TestimonialItem {
+  id: number;
+  rating: number;
+  text: string;
+  author: Author;
+}
+
+interface Section {
+  id: string;
+  label: string;
+  title: string;
+  titleHighlight: string;
+}
+
+interface TestimonialsData {
+  section: Section;
+  items: TestimonialItem[];
+}
+
+interface Props {
+  data: TestimonialsData;
+}
+
+const { data } = Astro.props as Props;
+const { section, items } = data;
+
+const colorClasses: Record<string, string> = {
+  rose: 'from-rose-400 to-pink-500',
+  amber: 'from-amber-400 to-orange-500',
+  emerald: 'from-emerald-400 to-teal-500'
+};
+---
+---
+
+<section id={section.id} class="py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="text-rose-500 font-bold text-sm uppercase tracking-wider mb-4">{section.label}</p>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">
+        {section.title}<br/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-emerald-600">{section.titleHighlight}</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {items.map((testimonial: TestimonialItem) => (
+        <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
+          <div class="flex gap-1 mb-4">
+            {[...Array(testimonial.rating)].map((_, index: number) => (
+              <span class="text-amber-400">⭐</span>
+            ))}
+          </div>
+          <p class="text-gray-700 mb-6 leading-relaxed">
+            {testimonial.text}
+          </p>
+          <div class="flex items-center gap-4">
+            <div class={`w-12 h-12 bg-gradient-to-br ${colorClasses[testimonial.author.color]} rounded-full flex items-center justify-center text-white font-bold`}>
+              {testimonial.author.initials}
+            </div>
+            <div>
+              <p class="font-bold text-gray-900">{testimonial.author.name}</p>
+              <p class="text-sm text-gray-500">{testimonial.author.location}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

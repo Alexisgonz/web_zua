@@ -1,28 +1,33 @@
-// Content Management System - Loader functions
+import homeData from '../content/home.json';
 
-// Cargar todo el contenido de home desde un único JSON
-export async function getHomeContent() {
-  try {
-    const module = await import('../content/home.json');
-    return module.default;
-  } catch (error) {
-    console.error('Error loading home content:', error);
-    throw new Error('Failed to load home content');
-  }
+export async function getHomeData() {
+  return homeData;
 }
 
-// Función para obtener sección específica del contenido
-export async function getContentSection(section: string) {
-  try {
-    const homeContent = await getHomeContent();
-    return homeContent[section] || null;
-  } catch (error) {
-    console.error(`Error loading ${section} content:`, error);
-    throw new Error(`Failed to load content section: ${section}`);
-  }
+export async function getHeroData() {
+  return homeData.hero;
 }
 
-// Legacy: mantener compatibilidad con getValues
 export async function getValues() {
-  return await getContentSection('values');
+  return homeData.values;
+}
+
+export async function getFeatures() {
+  return homeData.features;
+}
+
+export async function getBenefits() {
+  return homeData.benefits;
+}
+
+export async function getBrands() {
+  return homeData.brands;
+}
+
+export async function getTestimonials() {
+  return homeData.testimonials;
+}
+
+export async function getCTA() {
+  return homeData.cta;
 }

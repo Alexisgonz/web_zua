@@ -1,14 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.vue';
-import Values from '../components/Values.vue';
-import Story from '../components/Story.astro';
-import ProductsPreview from '../components/ProductsPreview.astro';
+import Hero from '../components/home/hero.astro';
+import Values from '../components/home/values.astro';
+import Features from '../components/home/features.astro';
+import Benefits from '../components/home/benefits.astro';
+import Brands from '../components/home/brands.astro';
+import Testimonials from '../components/home/testimonials.astro';
+import CTASection from '../components/home/cta-section.astro';
+
+import { getHomeData } from '../lib/cms';
+
+const homeData = await getHomeData();
+---
 ---
 
-<Layout title="SUA - Transformadores de Cacao">
-  <Hero client:load />
-  <Values client:visible />
-  <Story />
-  <ProductsPreview />
+<Layout title="SUA - Del Bosque a tu Bienestar">
+  <Hero data={homeData.hero} />
+  <Values data={homeData.values} />
+  <Features data={homeData.features} />
+  <Benefits data={homeData.benefits} />
+  <Brands data={homeData.brands} />
+  <Testimonials data={homeData.testimonials} />
+  <CTASection data={homeData.cta} />
 </Layout>
