@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/home/hero.astro';
+import Hero from '../components/Hero.vue';
 import Values from '../components/home/values.astro';
 import Features from '../components/home/features.astro';
 import Benefits from '../components/home/benefits.astro';
@@ -9,13 +9,31 @@ import Testimonials from '../components/home/testimonials.astro';
 import CTASection from '../components/home/cta-section.astro';
 
 import { getHomeData } from '../lib/cms';
+import { resolveCampaign, toHeroData, heroGradient } from '../lib/campaigns';
 
 const homeData = await getHomeData();
----
+const campaign = resolveCampaign(Astro.url);
+const heroData = toHeroData(campaign);
+const gradient = heroGradient(campaign);
 ---
 
 <Layout title="SUA - Del Bosque a tu Bienestar">
-  <Hero data={homeData.hero} />
+  <!-- Franja de color que coincide con la altura del header -->
+  <section class={`h-16 md:h-20 flex items-center relative overflow-hidden ${gradient}`}>
+  </section>
+  
+  <!-- Sección principal del Hero -->
+  <section class="min-h-screen flex flex-col justify-center relative overflow-hidden">
+    <Hero data={heroData} client:load />
+  </section>
+  
+  {/* Banner opcional de campaña */}
+  {campaign.banners && campaign.banners.length > 0 && (
+    <a href={campaign.banners[0].href || '/tienda'} class="block mx-auto max-w-7xl px-4 mt-8">
+      <img src={campaign.banners[0].desktop} alt="Banner campaña" class="w-full rounded-3xl shadow-lg" />
+    </a>
+  )}
+  
   <Values data={homeData.values} />
   <Features data={homeData.features} />
   <Benefits data={homeData.benefits} />

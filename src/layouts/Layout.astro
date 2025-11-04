@@ -19,14 +19,14 @@ const { title } = Astro.props;
     />
     <title>{title}</title>
   </head>
-  <body class="font-nunito text-gray-800">
+  <body class="font-nunito text-gray-800 overflow-x-hidden">
     <!-- Header con efecto Orizon -->
-    <header class="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 lg:px-8 pt-4 md:pt-6 pb-0">
+    <header class="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 lg:px-8 pt-0 pb-0">
       <div
         id="header-bar"
         class="max-w-7xl mx-auto bg-white/95 backdrop-blur-lg rounded-2xl shadow-lg transition-all duration-500 ease-out"
       >
-        <nav class="px-4 md:px-6 lg:px-8 h-16 md:h-18 flex items-center justify-between">
+        <nav class="px-4 md:px-6 lg:px-8 h-18 md:h-20 flex items-center justify-between">
           <!-- Logo -->
           <a href="/" class="flex items-center shrink-0 group">
             <img
@@ -208,19 +208,16 @@ const { title } = Astro.props;
   let isMenuOpen = false;
   let lastScrollY = window.scrollY;
 
-  // Toggle Mobile Menu
   function toggleMobileMenu() {
     isMenuOpen = !isMenuOpen;
     
     if (isMenuOpen) {
-      // Open menu
       mobileMenu.classList.remove("pointer-events-none", "opacity-0", "scale-95");
       mobileMenu.classList.add("opacity-100", "scale-100");
       
       mobileMenuOverlay.classList.remove("pointer-events-none", "opacity-0", "backdrop-blur-0", "bg-black/0");
       mobileMenuOverlay.classList.add("opacity-100", "backdrop-blur-sm", "bg-black/20");
       
-      // Animate hamburger to X
       const spans = mobileMenuButton.querySelectorAll("span");
       spans[0].style.transform = "rotate(45deg) translateY(7px)";
       spans[1].style.opacity = "0";
@@ -228,7 +225,6 @@ const { title } = Astro.props;
       
       document.body.style.overflow = "hidden";
     } else {
-      // Close menu
       mobileMenu.classList.add("opacity-0", "scale-95");
       mobileMenu.classList.remove("opacity-100", "scale-100");
       
@@ -243,7 +239,6 @@ const { title } = Astro.props;
         mobileMenuOverlay.classList.add("pointer-events-none");
       }, 300);
       
-      // Reset hamburger
       const spans = mobileMenuButton.querySelectorAll("span");
       spans[0].style.transform = "";
       spans[1].style.opacity = "";
@@ -259,17 +254,14 @@ const { title } = Astro.props;
     }
   }
 
-  // Header scroll effect - Estilo Orizon
   function updateHeader() {
     const scrollY = window.scrollY;
     
     if (scrollY > 20) {
-      // Scrolled: más compacto y sombra más pronunciada
       headerBar.style.padding = "0.5rem 1rem";
       headerBar.classList.add("shadow-xl");
       headerBar.classList.remove("shadow-lg");
     } else {
-      // Top: más espacioso
       headerBar.style.padding = "";
       headerBar.classList.remove("shadow-xl");
       headerBar.classList.add("shadow-lg");
@@ -278,7 +270,6 @@ const { title } = Astro.props;
     lastScrollY = scrollY;
   }
 
-  // Event Listeners
   mobileMenuButton.addEventListener("click", toggleMobileMenu);
   mobileMenuOverlay.addEventListener("click", closeMobileMenu);
   
@@ -286,7 +277,6 @@ const { title } = Astro.props;
     link.addEventListener("click", closeMobileMenu);
   });
 
-  // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
       const href = this.getAttribute("href");
@@ -294,7 +284,7 @@ const { title } = Astro.props;
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
-          const headerHeight = 100; // Adjust for fixed header
+          const headerHeight = 100;
           const targetPosition = target.offsetTop - headerHeight;
           
           window.scrollTo({
@@ -306,7 +296,6 @@ const { title } = Astro.props;
     });
   });
 
-  // Initialize
   updateHeader();
   window.addEventListener("scroll", updateHeader, { passive: true });
   window.addEventListener("resize", updateHeader);
@@ -315,12 +304,19 @@ const { title } = Astro.props;
 <style is:global>
   @import "../styles/global.css";
   
-  /* Smooth scrolling */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  
   html {
     scroll-behavior: smooth;
   }
   
-  /* Custom scrollbar */
+  section {
+    overflow-x: hidden;
+  }
+  
   ::-webkit-scrollbar {
     width: 10px;
   }

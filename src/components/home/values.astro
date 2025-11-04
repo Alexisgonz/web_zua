@@ -1,68 +1,77 @@
 ---
-interface ValueMetric {
-  value: string;
-  label: string;
-}
-
-interface ValueItem {
-  id: string;
-  icon: string;
-  title: string;
-  description: string;
-  metric: ValueMetric;
-}
-
-interface Section {
-  id: string;
-  title: string;
-  subtitle: string;
-  description: string;
-}
-
-interface ValuesData {
-  section: Section;
-  values: ValueItem[];
-}
-
-interface Props {
-  data: ValuesData;
-}
-
+interface ValueMetric { value: string; label: string; }
+interface ValueItem { id: string; icon: string; title: string; description: string; metric: ValueMetric; }
+interface Section { id: string; title: string; subtitle: string; description: string; }
+interface ValuesData { section: Section; values: ValueItem[]; }
+interface Props { data: ValuesData; }
 const { data } = Astro.props as Props;
 ---
 
-<section id={data.section.id} class="py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6">
+<section
+  id={data.section.id}
+  class="relative py-20 md:py-32 px-4 md:px-6 lg:px-8
+         bg-gradient-to-b from-rose-50 via-pink-50 to-purple-50 overflow-hidden"
+>
+  {/* decoraciones sutiles */}
+  <div class="pointer-events-none absolute -top-10 -right-10 w-72 h-72 rounded-full bg-pink-200/30 blur-3xl"></div>
+  <div class="pointer-events-none absolute -bottom-16 -left-10 w-72 h-72 rounded-full bg-rose-200/30 blur-3xl"></div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold
+                 bg-gradient-to-r from-pink-600 via-purple-600 to-rose-600 bg-clip-text text-transparent">
         {data.section.title}
       </h2>
-      <p class="text-lg md:text-xl text-gray-600 mb-4">
-        {data.section.subtitle}
-      </p>
-      <p class="text-base md:text-lg text-gray-500 max-w-4xl mx-auto leading-relaxed">
+      <p class="mt-4 text-lg md:text-xl text-gray-700">{data.section.subtitle}</p>
+      <p class="mt-3 text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
         {data.section.description}
       </p>
     </div>
-    
-    <!-- Values Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      {data.values.map((value: ValueItem) => (
-        <div class="bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-2 border-transparent hover:border-green-500 group">
-          <!-- Icon -->
-          <div class="w-20 h-20 bg-gradient-to-br from-green-600 to-green-800 rounded-full flex items-center justify-center text-4xl mb-6 shadow-lg group-hover:scale-105 transition-transform duration-300">
-            {value.icon}
-          </div>
-          
-          <!-- Content -->
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">{value.title}</h3>
-          <p class="text-gray-600 leading-relaxed mb-6">{value.description}</p>
-          
-          <!-- Metric -->
-          <div class="pt-4 border-t border-gray-100">
-            <div class="text-center">
-              <span class="text-2xl font-bold text-green-600">{value.metric.value}</span>
-              <p class="text-sm text-gray-500">{value.metric.label}</p>
+
+    {/* Grid de valores */}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      {data.values.map((value: ValueItem, i: number) => (
+        <div class="group p-[1px] rounded-3xl bg-gradient-to-br
+                    from-pink-300 via-purple-300 to-rose-300 hover:from-pink-400 hover:to-rose-400
+                    transition-all duration-300">
+          <div class="h-full bg-white/90 backdrop-blur-xl rounded-3xl p-7 md:p-8
+                      shadow-lg hover:shadow-2xl transition-all duration-300
+                      hover:-translate-y-1">
+            {/* Icono */}
+            <div class="w-16 h-16 md:w-18 md:h-18 rounded-full
+                        bg-gradient-to-br from-emerald-500 to-emerald-700
+                        text-white flex items-center justify-center text-3xl md:text-4xl
+                        shadow-md group-hover:scale-105 transition-transform duration-300">
+              {value.icon}
+            </div>
+
+            {/* Título & desc */}
+            <h3 class="mt-5 text-2xl font-extrabold text-gray-900">
+              {value.title}
+            </h3>
+            <p class="mt-3 text-gray-600 leading-relaxed">
+              {value.description}
+            </p>
+
+            {/* Métrica tipo pill */}
+            <div class="mt-6 pt-5 border-t border-pink-100">
+              <div class="inline-flex items-center gap-2 rounded-full
+                          bg-gradient-to-r from-pink-100 to-rose-100
+                          border-2 border-pink-200 px-4 py-2 shadow-sm">
+                <span class="text-lg md:text-xl font-extrabold text-emerald-600">
+                  {value.metric.value}
+                </span>
+                <span class="text-xs md:text-sm text-gray-600">
+                  {value.metric.label}
+                </span>
+              </div>
+            </div>
+
+            {/* Estrellitas decorativas */}
+            <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="text-pink-400">✨</span>
+              <span class="text-amber-400 ml-1">✷</span>
+              <span class="text-purple-400 ml-1">✿</span>
             </div>
           </div>
         </div>
@@ -70,3 +79,9 @@ const { data } = Astro.props as Props;
     </div>
   </div>
 </section>
+
+<style>
+/* micro animación opcional (si quieres más vida al hover) */
+@keyframes float-soft { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+.group:hover .float-soft { animation: float-soft 3s ease-in-out infinite; }
+</style>
