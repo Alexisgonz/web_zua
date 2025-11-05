@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen flex items-center relative overflow-hidden">
     <!-- Elementos decorativos estilo Mumu - Por encima del slider -->
-    <div class="absolute top-10 right-10 w-72 h-72 bg-pink-300/30 rounded-full blur-2xl animate-pulse z-40"></div>
+    <div class="absolute top-10 right-10 w-72 h-72 bg-pink-bg/30 rounded-full blur-2xl animate-pulse z-40"></div>
     <div class="absolute bottom-20 left-10 w-96 h-96 bg-yellow-200/30 rounded-full blur-3xl animate-bounce-slow z-40"></div>
     <div class="absolute top-1/3 left-1/3 w-48 h-48 bg-green-300/20 rounded-full blur-2xl z-40"></div>
     <div class="absolute bottom-1/3 right-1/4 w-64 h-64 bg-purple-300/25 rounded-full blur-2xl z-40"></div>
@@ -74,15 +74,15 @@
                   :alt="slide.alt"
                   class="w-full h-screen object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <!-- Overlay con gradiente vibrante -->
-                <div class="absolute inset-0 bg-gradient-to-t from-pink-600/80 via-purple-400/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+                <!-- Overlay con gradiente suave -->
+                <div class="absolute inset-0 bg-gradient-to-t from-pink-soft/80 via-pink-bg/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
               </div>
             </div>
 
             <!-- Navigation arrows estilo Mumu -->
             <button 
               @click="prevSlide"
-              class="absolute left-4 lg:left-6 top-1/2 -translate-y-1/2 bg-pink-500 hover:bg-pink-600 text-white p-4 lg:p-5 rounded-full shadow-xl transition-all hover:scale-110 z-[60] group"
+              class="absolute left-4 lg:left-6 top-1/2 -translate-y-1/2 bg-pink-soft hover:bg-pink-soft-dark text-white p-4 lg:p-5 rounded-full shadow-xl transition-all hover:scale-110 z-[60] group"
               aria-label="Slide anterior"
             >
               <svg class="w-6 h-6 lg:w-7 lg:h-7 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,7 +91,7 @@
             </button>
             <button 
               @click="nextSlide"
-              class="absolute right-4 lg:right-6 top-1/2 -translate-y-1/2 bg-pink-500 hover:bg-pink-600 text-white p-4 lg:p-5 rounded-full shadow-xl transition-all hover:scale-110 z-[60] group"
+              class="absolute right-4 lg:right-6 top-1/2 -translate-y-1/2 bg-pink-soft hover:bg-pink-soft-dark text-white p-4 lg:p-5 rounded-full shadow-xl transition-all hover:scale-110 z-[60] group"
               aria-label="Siguiente slide"
             >
               <svg class="w-6 h-6 lg:w-7 lg:h-7 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -113,7 +113,7 @@
             <!-- Contenido de texto superpuesto -->
             <div class="text-center lg:text-left text-white text-overlay">
               <!-- Badge trending estilo Mumu -->
-              <div class="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-full text-sm font-black mb-6 shadow-xl animate-bounce-subtle border-2 border-white/50">
+              <div class="inline-flex items-center gap-2 bg-gradient-to-r from-pink-soft to-pink-bg-light text-white px-6 py-3 rounded-full text-sm font-black mb-6 shadow-xl animate-bounce-subtle border-2 border-white/50">
                 <span class="animate-pulse text-lg">🔥</span>
                 <span class="relative">
                   EDICIÓN LIMITADA
@@ -141,7 +141,7 @@
                 <div class="flex items-center gap-4">
                   <div class="text-4xl lg:text-3xl xl:text-4xl">{{ heroData.feature.icon }}</div>
                   <div class="text-left">
-                    <h3 class="text-lg lg:text-base xl:text-lg font-black text-pink-600 mb-1">
+                    <h3 class="text-lg lg:text-base xl:text-lg font-black text-pink-soft mb-1">
                       {{ heroData.feature.title }}
                     </h3>
                     <p class="text-sm lg:text-sm xl:text-sm text-gray-600">
@@ -160,7 +160,7 @@
                     'px-8 lg:px-6 xl:px-8 py-4 lg:py-3 xl:py-4 rounded-full font-black text-lg lg:text-base xl:text-lg transition-all duration-300 transform hover:scale-105 relative overflow-hidden',
                     cta.variant === 'primary' 
                       ? 'cta-primary text-white hover:shadow-2xl animate-bounce-subtle' 
-                      : 'bg-white/90 backdrop-blur-sm text-pink-600 border-2 border-pink-300 hover:bg-pink-50 shadow-lg hover:shadow-xl'
+                      : 'bg-white/90 backdrop-blur-sm text-pink-soft border-2 border-pink-bg hover:bg-pink-bg-light shadow-lg hover:shadow-xl'
                   ]"
                 >
                   {{ cta.text }}
@@ -174,7 +174,7 @@
             <!-- Información del slide actual -->
             <div class="hidden lg:flex justify-end">
               <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 text-center shadow-2xl border-2 border-white/50 max-w-sm transform hover:scale-105 transition-transform duration-300">
-                <h3 class="text-2xl font-black text-pink-600 mb-3">
+                <h3 class="text-2xl font-black text-pink-soft mb-3">
                   {{ heroData.images[currentSlide]?.title }}
                 </h3>
                 <p class="text-base text-gray-700 font-medium mb-4">
@@ -182,7 +182,7 @@
                 </p>
                 <!-- Badge de oferta -->
                 <div class="mt-4">
-                  <span class="inline-block bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-2 rounded-full text-sm font-bold">
+                  <span class="inline-block bg-gradient-to-r from-pink-soft to-pink-bg text-white px-6 py-2 rounded-full text-sm font-bold">
                     ¡Oferta Especial! 🎁
                   </span>
                 </div>
@@ -203,7 +203,7 @@
               'slider-dot transition-all duration-300 h-4 lg:h-5 rounded-full border-2',
               currentSlide === index 
                 ? 'w-10 lg:w-12 active shadow-lg' 
-                : 'w-4 lg:w-5 bg-white/60 border-white/60 hover:bg-pink-300 hover:border-pink-300'
+                : 'w-4 lg:w-5 bg-white/60 border-white/60 hover:bg-pink-bg hover:border-pink-bg'
             ]"
             :aria-label="`Ir a slide ${index + 1}`"
           ></button>
@@ -586,8 +586,8 @@ onUnmounted(() => {
 
 /* Efectos hover para CTAs */
 .cta-primary {
-  background: linear-gradient(45deg, #ec4899, #be185d);
-  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+  background: linear-gradient(45deg, #f8a5c2, #e794b3);
+  box-shadow: 0 4px 15px rgba(248, 165, 194, 0.4);
   position: relative;
   overflow: hidden;
 }
@@ -608,14 +608,14 @@ onUnmounted(() => {
 }
 
 .cta-primary:hover {
-  background: linear-gradient(45deg, #be185d, #9d174d);
-  box-shadow: 0 8px 25px rgba(236, 72, 153, 0.6);
+  background: linear-gradient(45deg, #e794b3, #f0b8d0);
+  box-shadow: 0 8px 25px rgba(248, 165, 194, 0.6);
   transform: translateY(-2px) scale(1.05);
 }
 
 /* Efectos especiales para badges */
 .gradient-badge {
-  background: linear-gradient(45deg, #ec4899, #8b5cf6, #06b6d4);
+  background: linear-gradient(45deg, #f8a5c2, #f7c7db, #fbb6d3);
   background-size: 300% 300%;
   animation: gradient-shift 3s ease infinite;
 }
@@ -657,7 +657,7 @@ onUnmounted(() => {
 }
 
 .slider-dot.active {
-  background: linear-gradient(45deg, #ec4899, #8b5cf6);
+  background: linear-gradient(45deg, #f8a5c2, #f7c7db);
 }
 
 /* Mejoras para texto superpuesto */

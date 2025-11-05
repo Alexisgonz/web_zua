@@ -32,6 +32,16 @@ export default {
           light: "#d4b896", 
           dark: "#b8956a" 
         },
+        'pink-soft': {
+          DEFAULT: "#f8a5c2",
+          light: "#fbb6d3", 
+          dark: "#e794b3"
+        },
+        'pink-bg': {
+          DEFAULT: "#f7c7db",
+          light: "#fad4e6",
+          dark: "#f0b8d0"
+        },
         ink: "#0C0C0C"
       },
       borderRadius: { 

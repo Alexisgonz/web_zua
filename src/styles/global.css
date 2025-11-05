@@ -29,6 +29,14 @@
   --cacao-light: #d4b896;
   --cacao-dark: #b8956a;
   --ink: #0c0c0c;
+  
+  /* Colores rosados suaves inspirados en la imagen */
+  --pink-soft: #f8a5c2;
+  --pink-soft-light: #fbb6d3;
+  --pink-soft-dark: #e794b3;
+  --pink-bg: #f7c7db;
+  --pink-bg-light: #fad4e6;
+  --pink-bg-dark: #f0b8d0;
 }
 
 /* Clase de ancho personalizada para header */
@@ -89,6 +97,55 @@
   color: var(--ink);
 }
 
+/* Clases para rosados suaves */
+.bg-pink-soft {
+  background-color: var(--pink-soft);
+}
+
+.bg-pink-soft-light {
+  background-color: var(--pink-soft-light);
+}
+
+.bg-pink-soft-dark {
+  background-color: var(--pink-soft-dark);
+}
+
+.bg-pink-bg {
+  background-color: var(--pink-bg);
+}
+
+.bg-pink-bg-light {
+  background-color: var(--pink-bg-light);
+}
+
+.bg-pink-bg-dark {
+  background-color: var(--pink-bg-dark);
+}
+
+.text-pink-soft {
+  color: var(--pink-soft);
+}
+
+.text-pink-soft-light {
+  color: var(--pink-soft-light);
+}
+
+.text-pink-soft-dark {
+  color: var(--pink-soft-dark);
+}
+
+.border-pink-soft {
+  border-color: var(--pink-soft);
+}
+
+.border-pink-soft-light {
+  border-color: var(--pink-soft-light);
+}
+
+.border-pink-soft-dark {
+  border-color: var(--pink-soft-dark);
+}
+
 .border-forest {
   border-color: var(--forest);
 }
@@ -124,6 +181,43 @@
 
 .to-cacao-dark {
   --tw-gradient-to: var(--cacao-dark);
+}
+
+/* Gradientes para rosados suaves */
+.from-pink-soft {
+  --tw-gradient-from: var(--pink-soft);
+  --tw-gradient-to: rgb(248 165 194 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-pink-soft {
+  --tw-gradient-to: var(--pink-soft);
+}
+
+.to-pink-soft-light {
+  --tw-gradient-to: var(--pink-soft-light);
+}
+
+.to-pink-soft-dark {
+  --tw-gradient-to: var(--pink-soft-dark);
+}
+
+.from-pink-bg {
+  --tw-gradient-from: var(--pink-bg);
+  --tw-gradient-to: rgb(247 199 219 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-pink-bg {
+  --tw-gradient-to: var(--pink-bg);
+}
+
+.to-pink-bg-light {
+  --tw-gradient-to: var(--pink-bg-light);
+}
+
+.to-pink-bg-dark {
+  --tw-gradient-to: var(--pink-bg-dark);
 }
 
 /* Professional Shadows */
