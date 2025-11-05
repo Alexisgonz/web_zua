@@ -18,11 +18,7 @@ const gradient = heroGradient(campaign);
 ---
 
 <Layout title="SUA - Del Bosque a tu Bienestar">
-  <!-- Franja de color que coincide con la altura del header -->
-  <section class={`h-16 md:h-20 flex items-center relative overflow-hidden ${gradient}`}>
-  </section>
-  
-  <!-- Sección principal del Hero -->
+  <!-- Sección principal del Hero que empieza desde el inicio -->
   <section class="min-h-screen flex flex-col justify-center relative overflow-hidden">
     <Hero data={heroData} client:load />
   </section>

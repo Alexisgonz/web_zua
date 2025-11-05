@@ -82,7 +82,7 @@
             <!-- Navigation arrows estilo Mumu -->
             <button 
               @click="prevSlide"
-              class="absolute left-4 lg:left-6 top-1/2 -translate-y-1/2 bg-pink-500 hover:bg-pink-600 text-white p-4 lg:p-5 rounded-full shadow-xl transition-all hover:scale-110 z-50 group"
+              class="absolute left-4 lg:left-6 top-1/2 -translate-y-1/2 bg-pink-500 hover:bg-pink-600 text-white p-4 lg:p-5 rounded-full shadow-xl transition-all hover:scale-110 z-[60] group"
               aria-label="Slide anterior"
             >
               <svg class="w-6 h-6 lg:w-7 lg:h-7 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,7 +91,7 @@
             </button>
             <button 
               @click="nextSlide"
-              class="absolute right-4 lg:right-6 top-1/2 -translate-y-1/2 bg-pink-500 hover:bg-pink-600 text-white p-4 lg:p-5 rounded-full shadow-xl transition-all hover:scale-110 z-50 group"
+              class="absolute right-4 lg:right-6 top-1/2 -translate-y-1/2 bg-pink-500 hover:bg-pink-600 text-white p-4 lg:p-5 rounded-full shadow-xl transition-all hover:scale-110 z-[60] group"
               aria-label="Siguiente slide"
             >
               <svg class="w-6 h-6 lg:w-7 lg:h-7 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -107,7 +107,7 @@
         <!-- Overlay sutil para mejorar contraste -->
         <div class="absolute inset-0 content-overlay"></div>
         
-        <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-8 pt-20 md:pt-24 relative z-10">
           <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             
             <!-- Contenido de texto superpuesto -->
@@ -193,7 +193,7 @@
       </div>
 
       <!-- Dots navigation en la parte inferior -->
-      <div class="absolute bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 z-50">
+      <div class="absolute bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 z-[60]">
         <div class="flex justify-center gap-3 lg:gap-4">
           <button
             v-for="(slide, index) in heroData.images"
@@ -229,13 +229,17 @@ const isHovered = ref(false);
 let autoplayInterval = null;
 
 const nextSlide = () => {
+  console.log('nextSlide clicked', currentSlide.value);
   currentSlide.value = (currentSlide.value + 1) % heroData.value.images.length;
+  console.log('new currentSlide', currentSlide.value);
 };
 
 const prevSlide = () => {
+  console.log('prevSlide clicked', currentSlide.value);
   currentSlide.value = currentSlide.value === 0 
     ? heroData.value.images.length - 1 
     : currentSlide.value - 1;
+  console.log('new currentSlide', currentSlide.value);
 };
 
 const goToSlide = (index) => {
