@@ -30,13 +30,13 @@
   --cacao-dark: #b8956a;
   --ink: #0c0c0c;
   
-  /* Colores rosados suaves inspirados en la imagen */
-  --pink-soft: #f8a5c2;
-  --pink-soft-light: #fbb6d3;
-  --pink-soft-dark: #e794b3;
-  --pink-bg: #f7c7db;
-  --pink-bg-light: #fad4e6;
-  --pink-bg-dark: #f0b8d0;
+  /* Colores verdes inspirados en la imagen */
+  --pink-soft: #059669;
+  --pink-soft-light: #10b981;
+  --pink-soft-dark: #047857;
+  --pink-bg: #6ee7b7;
+  --pink-bg-light: #a7f3d0;
+  --pink-bg-dark: #34d399;
 }
 
 /* Clase de ancho personalizada para header */
@@ -183,10 +183,10 @@
   --tw-gradient-to: var(--cacao-dark);
 }
 
-/* Gradientes para rosados suaves */
+/* Gradientes para verdes */
 .from-pink-soft {
   --tw-gradient-from: var(--pink-soft);
-  --tw-gradient-to: rgb(248 165 194 / 0);
+  --tw-gradient-to: rgb(5 150 105 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
@@ -204,7 +204,7 @@
 
 .from-pink-bg {
   --tw-gradient-from: var(--pink-bg);
-  --tw-gradient-to: rgb(247 199 219 / 0);
+  --tw-gradient-to: rgb(110 231 183 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 

@@ -112,21 +112,6 @@
             
             <!-- Contenido de texto superpuesto -->
             <div class="text-center lg:text-left text-white text-overlay">
-              <!-- Badge trending estilo Mumu -->
-              <div class="inline-flex items-center gap-2 bg-gradient-to-r from-pink-soft to-pink-bg-light text-white px-6 py-3 rounded-full text-sm font-black mb-6 shadow-xl animate-bounce-subtle border-2 border-white/50">
-                <span class="animate-pulse text-lg">🔥</span>
-                <span class="relative">
-                  EDICIÓN LIMITADA
-                  <span class="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-ping"></span>
-                </span>
-                <span class="animate-pulse text-lg">🔥</span>
-              </div>
-              
-              <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-black leading-tight mb-4 drop-shadow-2xl">
-                <span class="bg-gradient-to-r from-white to-pink-100 bg-clip-text text-transparent">
-                  {{ heroData.title }}
-                </span>
-              </h1>
               
               <p class="text-xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl mb-4 font-semibold drop-shadow-lg text-white/95">
                 {{ heroData.subtitle }}
@@ -149,24 +134,6 @@
                     </p>
                   </div>
                 </div>
-              </div>
-              <!-- CTAs estilo Mumu -->
-              <div class="flex gap-4 justify-center lg:justify-start flex-wrap">
-                <a 
-                  v-for="cta in heroData.ctas"
-                  :key="cta.text"
-                  :href="cta.href" 
-                  :class="[
-                    'px-8 lg:px-6 xl:px-8 py-4 lg:py-3 xl:py-4 rounded-full font-black text-lg lg:text-base xl:text-lg transition-all duration-300 transform hover:scale-105 relative overflow-hidden',
-                    cta.variant === 'primary' 
-                      ? 'cta-primary text-white hover:shadow-2xl animate-bounce-subtle' 
-                      : 'bg-white/90 backdrop-blur-sm text-pink-soft border-2 border-pink-bg hover:bg-pink-bg-light shadow-lg hover:shadow-xl'
-                  ]"
-                >
-                  {{ cta.text }}
-                  <span v-if="cta.variant === 'primary'" class="ml-2 animate-pulse">💖</span>
-                  <span v-else class="ml-2">✨</span>
-                </a>
               </div>
               
             </div>

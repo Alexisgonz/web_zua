@@ -33,14 +33,14 @@ export default {
           dark: "#b8956a" 
         },
         'pink-soft': {
-          DEFAULT: "#f8a5c2",
-          light: "#fbb6d3", 
-          dark: "#e794b3"
+          DEFAULT: "#059669",
+          light: "#10b981", 
+          dark: "#047857"
         },
         'pink-bg': {
-          DEFAULT: "#f7c7db",
-          light: "#fad4e6",
-          dark: "#f0b8d0"
+          DEFAULT: "#6ee7b7",
+          light: "#a7f3d0",
+          dark: "#34d399"
         },
         ink: "#0C0C0C"
       },
