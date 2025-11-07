@@ -208,8 +208,8 @@
         "colors": {
           "from": "amber-50",
           "to": "orange-50",
-          "gradient": "amber-500",
-          "gradientTo": "orange-500",
+          "gradient": "amber-600",
+          "gradientTo": "orange-600",
           "accent": "amber-200"
         }
       },

@@ -107,7 +107,7 @@
         <!-- Overlay sutil para mejorar contraste -->
         <div class="absolute inset-0 content-overlay"></div>
         
-        <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-8 pt-20 md:pt-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-8 pt-8 md:pt-12 relative z-10">
           <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             
             <!-- Contenido de texto superpuesto -->
@@ -120,25 +120,7 @@
               <p class="text-base sm:text-lg lg:text-base xl:text-lg mb-6 text-white/90 leading-relaxed max-w-lg mx-auto lg:mx-0 drop-shadow-md">
                 {{ heroData.description }}
               </p>
-              
-              <!-- Feature destacado estilo Mumu -->
-              <div class="bg-white/95 backdrop-blur-xl rounded-2xl p-5 lg:p-6 mb-6 shadow-2xl border-2 border-white/50 max-w-md mx-auto lg:mx-0">
-                <div class="flex items-center gap-4">
-                  <div class="text-4xl lg:text-3xl xl:text-4xl">{{ heroData.feature.icon }}</div>
-                  <div class="text-left">
-                    <h3 class="text-lg lg:text-base xl:text-lg font-black text-pink-soft mb-1">
-                      {{ heroData.feature.title }}
-                    </h3>
-                    <p class="text-sm lg:text-sm xl:text-sm text-gray-600">
-                      {{ heroData.feature.description }}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
             </div>
-
-            <!-- Información del slide actual -->
             <div class="hidden lg:flex justify-end">
               <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 text-center shadow-2xl border-2 border-white/50 max-w-sm transform hover:scale-105 transition-transform duration-300">
                 <h3 class="text-2xl font-black text-pink-soft mb-3">

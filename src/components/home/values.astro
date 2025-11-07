@@ -18,8 +18,7 @@ const { data } = Astro.props as Props;
 
   <div class="max-w-7xl mx-auto relative z-10">
     <div class="text-center mb-14">
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold
-                 bg-gradient-to-r from-pink-600 via-purple-600 to-rose-600 bg-clip-text text-transparent">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-title-green">
         {data.section.title}
       </h2>
       <p class="mt-4 text-lg md:text-xl text-gray-700">{data.section.subtitle}</p>
@@ -39,7 +38,7 @@ const { data } = Astro.props as Props;
                       hover:-translate-y-1">
             {/* Icono */}
             <div class="w-16 h-16 md:w-18 md:h-18 rounded-full
-                        bg-gradient-to-br from-emerald-500 to-emerald-700
+                        bg-gradient-to-br from-icon-beige to-icon-beige-dark
                         text-white flex items-center justify-center text-3xl md:text-4xl
                         shadow-md group-hover:scale-105 transition-transform duration-300">
               {value.icon}
@@ -58,7 +57,7 @@ const { data } = Astro.props as Props;
               <div class="inline-flex items-center gap-2 rounded-full
                           bg-gradient-to-r from-pink-100 to-rose-100
                           border-2 border-pink-200 px-4 py-2 shadow-sm">
-                <span class="text-lg md:text-xl font-extrabold text-emerald-600">
+                <span class="text-lg md:text-xl font-extrabold text-icon-green">
                   {value.metric.value}
                 </span>
                 <span class="text-xs md:text-sm text-gray-600">

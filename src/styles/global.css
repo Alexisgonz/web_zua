@@ -37,6 +37,21 @@
   --pink-bg: #6ee7b7;
   --pink-bg-light: #a7f3d0;
   --pink-bg-dark: #34d399;
+  
+  /* Verde específico para títulos */
+  --title-green: #1a4d2e;
+  --title-green-light: #2d5f3f;
+  --title-green-dark: #0f3a23;
+  
+  /* Verde para iconos - tono más natural y elegante */
+  --icon-green: #166534;
+  --icon-green-light: #15803d;
+  --icon-green-dark: #14532d;
+  
+  /* Color dorado/beige para iconos */
+  --icon-beige: #D8B17C;
+  --icon-beige-light: #E2C194;
+  --icon-beige-dark: #C9A066;
 }
 
 /* Clase de ancho personalizada para header */
@@ -144,6 +159,93 @@
 
 .border-pink-soft-dark {
   border-color: var(--pink-soft-dark);
+}
+
+/* Clases para verde de títulos */
+.text-title-green {
+  color: var(--title-green);
+}
+
+.text-title-green-light {
+  color: var(--title-green-light);
+}
+
+.text-title-green-dark {
+  color: var(--title-green-dark);
+}
+
+.bg-title-green {
+  background-color: var(--title-green);
+}
+
+.border-title-green {
+  border-color: var(--title-green);
+}
+
+/* Clases para verde de iconos */
+.bg-icon-green {
+  background-color: var(--icon-green);
+}
+
+.bg-icon-green-light {
+  background-color: var(--icon-green-light);
+}
+
+.bg-icon-green-dark {
+  background-color: var(--icon-green-dark);
+}
+
+.text-icon-green {
+  color: var(--icon-green);
+}
+
+.from-icon-green {
+  --tw-gradient-from: var(--icon-green);
+  --tw-gradient-to: rgb(22 101 52 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-icon-green-dark {
+  --tw-gradient-to: var(--icon-green-dark);
+}
+
+/* Clases para beige de iconos */
+.bg-icon-beige {
+  background-color: var(--icon-beige);
+}
+
+.from-icon-beige {
+  --tw-gradient-from: var(--icon-beige);
+  --tw-gradient-to: rgb(216 177 124 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-icon-beige-dark {
+  --tw-gradient-to: var(--icon-beige-dark);
+}
+
+/* Gradientes específicos para botones de marcas */
+.bg-chocizone-gradient {
+  background: linear-gradient(to right, #d97706, #ea580c);
+}
+
+.bg-fihizu-gradient {
+  background: linear-gradient(to right, #ec4899, #be185d);
+}
+
+/* Gradientes para verde de títulos */
+.from-title-green {
+  --tw-gradient-from: var(--title-green);
+  --tw-gradient-to: rgb(26 77 46 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-title-green {
+  --tw-gradient-to: var(--title-green);
+}
+
+.to-title-green-light {
+  --tw-gradient-to: var(--title-green-light);
 }
 
 .border-forest {

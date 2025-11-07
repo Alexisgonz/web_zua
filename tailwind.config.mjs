@@ -42,6 +42,21 @@ export default {
           light: "#a7f3d0",
           dark: "#34d399"
         },
+        'title-green': {
+          DEFAULT: "#1a4d2e",
+          light: "#2d5f3f",
+          dark: "#0f3a23"
+        },
+        'icon-green': {
+          DEFAULT: "#166534",
+          light: "#15803d",
+          dark: "#14532d"
+        },
+        'icon-beige': {
+          DEFAULT: "#D8B17C",
+          light: "#E2C194",
+          dark: "#C9A066"
+        },
         ink: "#0C0C0C"
       },
       borderRadius: { 
