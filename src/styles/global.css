@@ -233,6 +233,51 @@
   background: linear-gradient(to right, #ec4899, #be185d);
 }
 
+/* Animaciones para los productos orbitando */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes counter-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 30s linear infinite;
+}
+
+.animate-counter-spin {
+  animation: counter-spin 30s linear infinite;
+}
+
+/* Mejoras para calidad de imagen */
+.product-image-quality {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Efecto glassmorphism para mejor definición */
+.glassmorphism-border {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 /* Gradientes para verde de títulos */
 .from-title-green {
   --tw-gradient-from: var(--title-green);

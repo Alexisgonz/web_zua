@@ -74,6 +74,8 @@ export default {
       animation: {
         "fade-up": "fade-up 0.6s ease-out",
         "slide-up": "slide-up 0.5s ease-out",
+        "spin-slow": "spin-slow 30s linear infinite",
+        "counter-spin": "counter-spin 30s linear infinite",
       },
       keyframes: {
         "fade-up": {
@@ -94,9 +96,26 @@ export default {
             transform: "translateY(0)",
           },
         },
+        "spin-slow": {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
+          "100%": {
+            transform: "rotate(360deg)",
+          },
+        },
+        "counter-spin": {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
+          "100%": {
+            transform: "rotate(-360deg)",
+          },
+        },
       },
       spacing: {
         '18': '4.5rem',
+        '26': '6.5rem',
         '88': '22rem',
       }
     },
