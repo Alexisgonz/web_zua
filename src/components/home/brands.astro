@@ -43,7 +43,7 @@ const { data } = Astro.props as Props;
 const { section, items } = data;
 ---
 
-<section id={section.id} class="py-20 md:py-24 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-white via-rose-50/30 to-white">
+<section id={section.id} class="py-20 md:py-24 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200">
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-title-green">
@@ -54,7 +54,7 @@ const { section, items } = data;
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
       {items.map((brand: BrandItem) => (
-        <div class={`group relative bg-gradient-to-br from-${brand.colors.from} to-${brand.colors.to} rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500`}>
+        <div class="group relative bg-gradient-to-br from-white to-gray-100 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200">
           <div class="p-10">
             <div class="mb-6">
               <h3 class="text-3xl font-extrabold text-gray-900 mb-2">{brand.name} {brand.icon}</h3>

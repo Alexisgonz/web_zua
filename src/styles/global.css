@@ -226,11 +226,11 @@
 
 /* Gradientes específicos para botones de marcas */
 .bg-chocizone-gradient {
-  background: linear-gradient(to right, #d97706, #ea580c);
+  background: linear-gradient(to right, #f59e0b, #d97706);
 }
 
 .bg-fihizu-gradient {
-  background: linear-gradient(to right, #ec4899, #be185d);
+  background: linear-gradient(to right, #a855f7, #7c3aed);
 }
 
 /* Animaciones para los productos orbitando */
